@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Boardgames Database | BODOGAMI</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="css/styles.css"  media="screen,projection"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>    
+    </head>
+    <body>
+        <header>            
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#!" class="brand-logo">Boardgames Database</a>
+                    <ul class="right hide-on-med-and-down">
+                    <li><a href="#"><i class="material-icons">search</i></a></li>
+                    <li><a href="#"><i class="material-icons">view_module</i></a></li>
+                    <li><a href="#"><i class="material-icons">refresh</i></a></li>
+                    <li><a href="#"><i class="material-icons">more_vert</i></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div id="jogos-view" class="container row">
+
+            </div>
+            <div class="painel-cadastro">
+                <form id="form-cadastro">
+                    <input id="txt-titulo" type="text" placeholder="Título" />
+                    <input id="txt-imagem" type="text" placeholder="URL da imagem" />
+                    <button id="btn-salvar-jogo" type="button" onclick="gamesController.add()">Salvar</button>
+                </form>            
+            </div>
+        </main>
+        <footer>
+            <p>Copyright 2018 Bodogami</p>
+        </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="js/app/helpers/Bind.js"></script>
+        <script src="js/app/helpers/ProxyFactory.js"></script>
+        <script src="js/app/services/HttpService.js"></script>
+        <script src="js/app/services/GamesService.js"></script>
+        <script src="js/app/models/Message.js"></script>
+        <script src="js/app/models/Game.js"></script>
+        <script src="js/app/models/GamesList.js"></script>
+        <script src="js/app/views/View.js"></script>
+        <script src="js/app/views/GamesView.js"></script>
+        <script src="js/app/views/MessageView.js"></script>
+        <script src="js/app/controllers/GamesController.js"></script>
+        <script>
+            let gamesController = new GamesController();
+        </script>
+    </body>
+</html>
