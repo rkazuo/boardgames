@@ -1,0 +1,28 @@
+version: '3'
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017"
+    networks:
+      - bodogami-network
+
+  node:
+    environment:
+      - MONGODB_URI=mongodb://mongodb/boardgames
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    image: rkazuo/bg
+    container_name: node
+    ports:
+      - "3000:3000"
+    networks:
+      - bodogami-network
+    depends_on:
+      - "mongodb"
+      
+networks:
+  bodogami-network:
+    driver: bridge
