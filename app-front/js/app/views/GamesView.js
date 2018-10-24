@@ -4,23 +4,26 @@ class GamesView extends View {
         super(element);
     }
 
-
     template(model) {
         return `
-            <ul class="collection">
-                ${model._games.map(n => `
-
-                    <li id="${n.id}" class="collection-item avatar">
-                        <img src="${n.images}" alt="" class="circle">
-                        <span class="title">${n.title}</span>
-                        <p>First Line <br>
-                        Second Line
-                        </p>
-                        <a href="#" class="waves-effect waves-light btn" onclick="gamesController.remove('${n.id}')">Remover</a>
-                    </li>
-                    
-                `).join('')}
-            </ul>
+        <div class="row">
+            ${model._games.map(n => `
+            
+                <div id="${n.id}" class="card col s6 m4 l3">
+                    <div class="card-image">
+                        <img src="${n.images}">                        
+                        <a class="btn-floating halfway-fab waves-effect waves-light red" onclick="gamesController.remove('${n.id}')"><i class="material-icons">delete</i></a>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title">${n.title}</span>
+                        <p>2 a 4 jogadores</p>
+                        <p>A partir de 12 anos</p>
+                        <p>30 minutos de duração</p>
+                    </div>
+                </div>
+                
+            `).join('')}
+          </div>
         `;
     }
 }
