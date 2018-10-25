@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Boardgames Database | BODOGAMI</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="css/styles.css"  media="screen,projection"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>    
+    </head>
+    <body>
+        <header>            
+        </header>
+        <main>            
+            <div id="message"></div>            
+            <div class="row">
+                <div class="col s12">
+                    
+                    <div class="card horizontal">
+                        <div class="card-image">
+                            <img id="img-url">
+                        </div>
+                        <div class="card-stacked">                                
+                            <div class="card-content">
+                                <h2 id="title" class="header"></h2>
+                                <p>2 a 4 jogadores</p>
+                                <p>A partir de 12 anos</p>
+                                <p>30 minutos de duração</p>
+                            </div>
+                            <div class="card-action">
+                                <a href="http://www.bodogami.com.br" target="_blank">Comprar</a>
+                                <a onclick="gameController.remove()">Excluir</a>
+                                <a href=".">Voltar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+        </main>
+        <footer>
+        </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(() => {
+                $("header").load("_header.html");
+                $("footer").load("_footer.html");
+            });            
+        </script>
+
+        <script src="js/app/helpers/Utils.js"></script>
+        <script src="js/app/helpers/Bind.js"></script>
+        <script src="js/app/helpers/ProxyFactory.js"></script>
+        <script src="js/app/services/HttpService.js"></script>
+        <script src="js/app/services/GamesService.js"></script>
+        <script src="js/app/models/Message.js"></script>
+        <script src="js/app/models/Game.js"></script>
+        <script src="js/app/views/View.js"></script>
+        <script src="js/app/views/MessageView.js"></script>
+        <script src="js/app/controllers/GameController.js"></script>
+        <script>
+            let gameController = new GameController();
+        </script>
+    </body>
+</html>

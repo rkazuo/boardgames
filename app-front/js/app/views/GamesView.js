@@ -11,8 +11,7 @@ class GamesView extends View {
             
                 <div id="${n.id}" class="card col s6 m4 l3">
                     <div class="card-image">
-                        <img src="${n.images}">                        
-                        <a class="btn-floating halfway-fab waves-effect waves-light red" onclick="gamesController.remove('${n.id}')"><i class="material-icons">delete</i></a>
+                        <a href="/game.html?id=${n.id}"><img src="${n.images}"></a>                        
                     </div>
                     <div class="card-content">
                         <span class="card-title">${n.title}</span>

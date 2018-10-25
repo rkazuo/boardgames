@@ -1,9 +1,9 @@
-class GamesController {
+class IndexController {
 
     constructor() {
         this._gamesList = new Bind(
             new GamesList(),
-            new GamesView($('#jogos-view')),
+            new GamesView($('#games-view')),
             'add','remove'
         );       
         this._message = new Bind(
@@ -22,20 +22,6 @@ class GamesController {
             this._message.text = "importado com sucesso!";
         })
         .catch( erro => this._mensagem.text = erro);
-    }
-
-    add() {
-        let service = new GamesService();
-        var game = {
-            title:$("#txt-titulo").val(),
-            images:$("#txt-imagem").val()
-        }
-        service.post(game)
-        .then(res => {
-            this._message.text = "salvo com sucesso";
-            this._gamesList.add(res);
-        })
-        .catch( erro => this._mensagem.texto = erro);
     }
 
     remove(id) {

@@ -15,8 +15,8 @@ class GamesService {
     getById(id) {
         let http = new HttpService();
         return http.get(`/v1/games/${id}`)
-        .then(games => {
-            return games.map(game => new Game(game._id, game.title, game.images));
+        .then(game => {
+            return new Game(game._id, game.title, game.images);
         })
         .catch(error => {
             console.log(error);

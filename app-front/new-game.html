@@ -10,28 +10,39 @@
     <body>
         <header>            
         </header>
-        <main>  
-            <section class="align-center">
-                <div class="input-field">
-                    <input id="filtro" type="text" class="validate">
-                    <label for="filtro">Filtro(To Do)</label>
-                </div>
-            </section>
-            <section>
-                <div id="games-view" class="container row">
-                </div>        
-            </section>
+        <main>
+            <div id="message"></div>
+            <div class="row">
+                <form class="col s12 m6">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="Título" id="title" type="text" class="validate">
+                            <label for="title">Título</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="URL da imagem" id="image_url" type="text" class="validate">
+                            <label for="image_url">URL da Imagem</label>
+                        </div>
+                    </div>
+
+                    <button class="btn waves-effect waves-light" onclick="gameController.add(event)">Salvar
+                        <i class="material-icons right">send</i>
+                    </button>
+            
+                </form>
+            </div>
         </main>
         <footer>
-
         </footer>
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        
         <script>
-            $("header").load("_header.html");
-            $("footer").load("_footer.html");
+            $(() => {
+                $("header").load("_header.html");
+                $("footer").load("_footer.html");
+            });            
         </script>
 
         <script src="js/app/helpers/Utils.js"></script>
@@ -45,8 +56,7 @@
         <script src="js/app/views/View.js"></script>
         <script src="js/app/views/GamesView.js"></script>
         <script src="js/app/views/MessageView.js"></script>
-        <script src="js/app/controllers/IndexController.js"></script>
-        <script>let indexController = new IndexController();</script>
-        
+        <script src="js/app/controllers/NewGameController.js"></script>
+        <script>let gameController = new NewGameController();</script>
     </body>
 </html>
