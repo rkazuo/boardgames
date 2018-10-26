@@ -9,7 +9,7 @@ class GamesView extends View {
         <div class="row">
             ${model._games.map(n => `
             
-                <div id="${n.id}" class="card col s6 m4 l3">
+                <div id="${n.id}" class="game card col s6 m4 l3">
                     <div class="card-image">
                         <a href="/game.html?id=${n.id}"><img src="${n.images}"></a>                        
                     </div>

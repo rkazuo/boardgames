@@ -34,4 +34,27 @@ class IndexController {
         .catch( erro => this._mensagem.text = erro);
     }
 
+    filter() {
+        let games = $(".game");
+        let value = $("#filter").val();
+
+        if (value.length > 0) {
+            for (let i = 0; i < games.length; i++) {
+                let game = games[i];
+                let title = $(game).find(".card-title").text();
+                let regex = new RegExp(value, "i");
+                if (!regex.test(title)) {
+                    game.classList.add("hide");
+                } else {
+                    game.classList.remove("hide");
+                }
+            }
+        } else {
+            for (let i = 0; i < games.length; i++) {
+                let game = games[i];
+                game.classList.remove("hide");
+            }
+        }
+    }
+
 }
